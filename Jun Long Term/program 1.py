@@ -1,3 +1,10 @@
+'''
+Chef and Price Control
+
+Problem Code: PRICECON
+'''
+
+
 def reduce(i):
     if i > price:
         return price
