@@ -1,34 +1,28 @@
-for test_case in range(int(input())):
-    sets = []
-    members = int(input())
-    data = list(map(int,input().split()))
-    staring = 0
-    nu = 0
-    temp =[]
-    for m in data:
-        if staring == 0:
-            nu = m
-            temp.append(m)
-            staring = 1
+def divider(d=[]):
+    li = []
+    j=0
+    sam = []
+    for i in d:
+
+        if i-j <= 2:
+
+            sam.append(i)
+            j = i
         else:
-            if (m-nu) <= 2:
-                temp.append(m)
-                nu = m
-            else:
-                sets.append(temp)
-                temp = []
-                temp.append(m)
-                nu = m
-                staring = 0
-        
-    sets.append(temp)
-    m = 0
-    n = 2000
-    for g in sets:
-        l = len(g)
-        if m < l:
-            m = l
-        if n >l:
-            n = l
-    print(n, end=" ")
-    print(m)
+            li.append(sam)
+            sam=[]
+            sam.append(i)
+            j=i
+    li.append(sam)
+    return li
+
+
+
+
+if __name__ == "__main__":
+    for test_case in range(int(input())):
+        sets = []
+        members = int(input())
+        data = list(map(int,input().split()))
+        data = divider(data)
+        print(f"{len(min(data))} {len(max(data))}")
