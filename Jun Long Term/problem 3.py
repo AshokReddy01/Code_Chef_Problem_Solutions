@@ -1,41 +1,59 @@
+'''
+Chef and Icecream 
+
+Problem Code: CHFICRM
+
+'''
 def process(data):
-    chef_balance = 0
+    ice_cream = 5
+    chef_balance = {5:0,10:0,15:0}
     change = 0
+
+
+    if data[0]  != ice_cream:
+        return 'NO'
+
     for i in data:
-        if chef_balance == 0 :
-            chef_balance = i
-        else:
-            change = i - 5
-            if chef_balance >= change:
-                chef_balance = i
-                continue 
-            return 'NO'
-    return 'YES'
+        # print()
         
-def check(i):
-    if i % 5 ==0:
-        return True
-    return False
+        # print()
+        if i == 5:
+            chef_balance[5] += 1
+        else: 
+            change = i - ice_cream
+            
+            if chef_balance[change] < 1:
+                while change:
+                    
+                    if chef_balance[5] !=0 and change//5 <= chef_balance[5] :
+                        chef_balance[5] -= 1
+                        change -= 5
+                        continue
+                    
+                    return 'NO'
+                chef_balance[i] += 1
+            else:
+                chef_balance[change] -= 1
+                chef_balance[i] += 1
+    
+    return 'YES'
+
+
+
+
+
+
 
 
 def main():
-    for test in range(int(input())):
-        
-        size = int(input())
-        data = list(map(int,input().split()))
-        if size == 1:
-            print("YES")
-            continue
-        d= list(filter(check,data))
+    for test in range(int(input())) :
 
-        if len(data) == len(d):
-            print(process(data))
-        else:
-            print('NO')
-            
+        size_of_customers = int(input())  
+        data = list(map(int,input().split()))
+        print(process(data))
+        
 
 if __name__ == "__main__":
-    chef_balance = 0
     main()
     
 
