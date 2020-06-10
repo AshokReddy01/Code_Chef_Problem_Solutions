@@ -2,4 +2,6 @@
 
 
 if __name__ == "__main__":
-    pass
+    for test in range(int(input())):
+        pass
+
