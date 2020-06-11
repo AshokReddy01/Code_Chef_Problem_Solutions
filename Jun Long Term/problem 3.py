@@ -4,6 +4,9 @@ Chef and Icecream
 Problem Code: CHFICRM
 
 '''
+
+from sys import stdin
+input = stdin.readline
 def process(data):
     ice_cream = 5
     chef_balance = {5:0,10:0,15:0}
