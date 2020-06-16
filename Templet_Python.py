@@ -2,6 +2,9 @@ from sys import stdin
 input = stdin.readline
 from collections import Counter as count_values
 
+def input_data():
+    return list(map(int,input().split()))
+
 def source():
     pass
 
