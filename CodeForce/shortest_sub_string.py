@@ -10,7 +10,31 @@ def input_data():
     return list(map(int,input().split()))
 
 def source():
-    pass
+    string = input()
+    data = []
+    
+    output = ''
+    j = 0
+
+    for i in range(2,len(string)+1,2):
+
+        data.append(string[j:i])
+        j = i
+    s = len(data)
+    i = 0
+    if s == 1:
+        return string
+
+    while True:
+
+
+        if i == s-1:
+            return output+data[i]
+        else:
+            output = output+data[i][0]
+            i +=1
+
+    return output
 
 
 def main():
