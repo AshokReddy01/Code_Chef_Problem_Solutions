@@ -6,32 +6,7 @@ def input_data():
     return list(map(int,input().split()))
 
 def source():
-    count = 0
-    data = []
-    N , B , M = map(int,input().split())
-    chef_data = input_data()
-    ok = True
-    value = 0
-    while ok:
-        temp = []
-
-        for _ in range(B):
-            if value == N:
-                ok = False
-                break
-            temp.append(value)
-            value += 1
-        data.append(temp)
-
-    cache = []
-    for i in chef_data:
-        if i == 0 or i not in cache:
-            count += 1
-            cache = data[(math.floor(i/B))]
-    
-
-
-    return count
+    pass
 
 
 
