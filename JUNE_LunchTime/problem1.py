@@ -1,3 +1,6 @@
+'''
+Chef and Demonetisation 
+'''
 from sys import stdin
 input = stdin.readline
 from collections import Counter as count_values
@@ -9,22 +12,29 @@ def source():
     S , N = input_data()
     count = 0
     ok = True
+    if S%2 != 0 or S == 1:
+        count +=1
+        S -= 1
+    temp= (S//N)
+    S -= temp*N
+    count += temp
+    
     while ok:
-        print(S)
-        if  S == 0:
+        if S%2 != 0 or S == 1:
+            count +=1
+            S -= 1
+        elif S <= 0: 
             return count
-        elif S==1:
-            return count+1
+        elif S<N:
+            N -= 2
+            S -= N
+            count +=1
         else:
-            if S >= N:
-                count = S//N
-                S -= count * N
-            elif S%2 != 0:
-                count += 1
-                S -=1
-            else:
-                S=0
-                count +=1
+            S -= N
+            count +=1
+        
+
+        
             
     return count
 
