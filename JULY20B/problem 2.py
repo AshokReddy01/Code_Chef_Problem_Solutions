@@ -1,3 +1,7 @@
+''' 
+Chef and Card Game
+'''
+
 import os
 import sys
 from io import BytesIO, IOBase
