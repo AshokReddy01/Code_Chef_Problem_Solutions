@@ -6,7 +6,7 @@ from io import BytesIO, IOBase
 from collections import Counter as count_values
 import math
 
-def input_data():
+def readData():
     return list(map(int,input().split()))
 
 def source():
